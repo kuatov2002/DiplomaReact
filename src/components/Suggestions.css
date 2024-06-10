@@ -1,0 +1,55 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+.Suggestions h2{
+    margin: auto 0;
+}
+
+button.Go{
+    width: 241px;
+    height: 57px;
+    background-color: #2E683B;
+    border-radius: 35px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+button.Back{
+    width: 241px;
+    height: 57px;
+    background-color: #58AE6B;
+    border-radius: 35px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    border: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+  
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.Suggestions h2{
+    text-align: left;
+}

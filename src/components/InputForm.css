@@ -1,0 +1,89 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* Центрируем по горизонтали */
+    font-family: 'Inter', sans-serif;
+}
+
+.InputForm {
+    margin-top: 200px;
+    /* Измените это значение по вашему усмотрению */
+}
+
+textarea:focus {
+    outline: none;
+    /* Убираем обводку при выделении */
+}
+
+.InputForm textarea {
+    /* width: 946px; */
+    padding: 10px;
+    /* Значение выравнивания */
+    height: 225px;
+    /* Высота поля ввода */
+    font-size: 14px;
+    color: black;
+    border: 1.5px dashed #C2C2C2;
+    border-radius: 8px;
+    resize: none;
+}
+
+form.input{
+    margin-top: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+    gap: 10px;
+    width: 1266px;
+    /* height: 225px;  */
+    background: #FFFFFF;
+    border-radius: 8px;
+    font-family: 'Inter';
+    font-style: normal;
+}
+
+p.input {
+    font-size: 24px;
+    color: #2E683B;
+    font-weight: 500;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+#length{
+  align-self: flex-end;
+  font-size: 16px;
+}
+
+  
+  button.SetParam {
+    align-self: center;
+    width: 241px;
+    height: 57px;
+    left: 513px;
+    top: 552px;
+
+    border-radius: 35px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 16px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    border: none;
+  }
+  .greenButton {
+    background-color: #2E683B;
+  }
+
+  .grayButton{
+    background-color: #7C7C7C;
+  }
+
+  #length{
+    color: black;
+  }

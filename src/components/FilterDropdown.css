@@ -1,0 +1,24 @@
+span.tagss {
+    background-color: aqua;
+    border-radius: 10px;
+    white-space: nowrap;
+    display: inline-block; /* Показывать в строку */
+    margin: 2px 4px 2px 0; /* Добавим небольшой отступ между элементами */
+    padding: 1px;
+  }
+  
+  div.tags {
+    width: 200px;
+    display: inline-block; /* Показывать в строку */
+    vertical-align: top; /* Выровнять по верхнему краю */
+  }
+  .filter-dropdown{
+    border-radius: 20px;
+    padding: 8px;
+    background-color: gray;
+    position: absolute;
+    width: 300px;
+    z-index: 1;
+    display: none;
+  }
+  

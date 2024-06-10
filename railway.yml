@@ -1,0 +1,5 @@
+version: 2
+services:
+  app:
+    environment:
+      NODE_OPTIONS: --max_old_space_size=4096 # Установите значение в зависимости от ваших потребностей

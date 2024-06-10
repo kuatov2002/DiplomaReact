@@ -1,0 +1,107 @@
+body{
+  font-family: "Inter", sans-serif;
+}
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.slider {
+  position: absolute;
+  width: 25px;
+  height: 300px;
+  left: 50px;
+  top: 240px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Line */
+.line {
+  position: absolute;
+  width: 360px;
+  height: 4px;
+  left: 15px;
+  top: 80px;
+  border: 1px solid #ECEBEB;
+  background-color: #ECEBEB;
+  transform-origin: left top;
+  transform: rotate(90deg);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Ellipse */
+.ellipse {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 0;
+  background: #ECEBEB;
+  border-radius: 50%;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Positioning of ellipses */
+.ellipse:nth-child(2) {
+  top: 79px;
+}
+
+.ellipse:nth-child(3) {
+  top: 197px;
+}
+
+.ellipse:nth-child(4) {
+  top: 315px;
+}
+
+.ellipse:nth-child(5) {
+  top: 433px;
+}
+.inner-circle {
+  position: absolute;
+  width: 15px; /* Размер круга */
+  height: 15px; /* Размер круга */
+  background: #2E683B;
+  border-radius: 50%; /* Делает круг */
+  top: 50%; /* Центрирование по вертикали */
+  left: 50%; /* Центрирование п   о горизонтали */
+  transform: translate(-50%, -50%); /* Центрирует по центру эллипса */
+}
+a{
+  text-decoration: none;
+  color: inherit; /* Устанавливаем цвет ссылки таким же, как у родительского элемента */
+  outline: none;
+}

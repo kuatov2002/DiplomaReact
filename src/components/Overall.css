@@ -1,0 +1,73 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.overall p {
+    
+}
+
+.overall svg {
+    margin-right: 3px;
+}
+
+.overall {
+    display: flex;
+    width: 1100px;
+    justify-content: space-evenly;
+    margin-top: 200px;
+}
+
+.problem {
+    display: flex;
+    flex-direction: column;
+}
+
+.overall textarea {
+    box-sizing: border-box;
+    resize: none;
+    border: 2px dashed #2E683B;
+    border-radius: 20px;
+
+}
+
+.overall .topic,
+.overall .input,
+.overall .output,
+.overall .difficulty {
+    display: flex;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+}
+
+.overall h2 {}
+
+textarea.card {
+    display: flex;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.others {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.analyses p {
+    font-size: 20px;
+}
+
+.overall .buttons{
+    position: absolute;
+    bottom: 200px;
+}

@@ -1,0 +1,14 @@
+.Home{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin-top: 300px;
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+}
+.text{
+    display: flex;
+}
