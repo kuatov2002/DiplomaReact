@@ -19,11 +19,8 @@ textarea:focus {
 }
 
 .InputForm textarea {
-    /* width: 946px; */
     padding: 10px;
-    /* Значение выравнивания */
     height: 225px;
-    /* Высота поля ввода */
     font-size: 14px;
     color: black;
     border: 1.5px dashed #C2C2C2;
@@ -31,20 +28,21 @@ textarea:focus {
     resize: none;
 }
 
-form.input{
-    margin-top: 300px;
-    display: flex;
-    flex-direction: column;
-    padding: 8px 10px;
-    gap: 10px;
-    width: 1266px;
-    /* height: 225px;  */
-    background: #FFFFFF;
-    border-radius: 8px;
-    font-family: 'Inter';
-    font-style: normal;
+form.input {
+  margin-top: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 10px;
+  gap: 10px;
+  width: 70vw; /* Задаем ширину формы 70% */
+  max-width: 1266px; /* Максимальная ширина формы */
+  background: #FFFFFF;
+  border-radius: 8px;
+  font-family: 'Inter';
+  font-style: normal;
+  margin-left: auto; /* Добавляем автоматический левый отступ */
+  margin-right: auto; /* Добавляем автоматический правый отступ */
 }
-
 p.input {
     font-size: 24px;
     color: #2E683B;

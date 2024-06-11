@@ -23,7 +23,7 @@ const App = () => {
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"></link>
-      <header style={{ position: 'absolute', top: 70, left: 200, display: 'flex', justifyContent: 'space-between' }}>
+      <header style={{width:'80%', position: 'absolute', top: 70, left: '50%',transform:'translateX(-50%)', display: 'flex', justifyContent: 'space-between'}}>
         <a id='problemBase' style={{ display: 'flex', alignItems: 'center' }} href='Base'>
           <img src={base} alt="Base" width={39} />
           <span style={{ fontFamily: 'Inter', fontSize: 20, fontWeight: 400, lineHeight: '16px', textAlign: 'left', marginLeft: 10 }}>Problem Base</span>
@@ -31,7 +31,7 @@ const App = () => {
         <IconButton
           aria-label="open drawer"
           onClick={toggleDrawer}
-          style={{ position: 'absolute', right: -1100 }}
+          style={{ position: 'absolute', right:0 }}
         >
           <MenuIcon fontSize="large" /> {/* Увеличенный размер иконки */}
         </IconButton>
