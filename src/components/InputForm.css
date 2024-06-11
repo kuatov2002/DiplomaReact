@@ -9,7 +9,6 @@ html {
 }
 
 .InputForm {
-    margin-top: 200px;
     /* Измените это значение по вашему усмотрению */
 }
 
@@ -29,12 +28,11 @@ textarea:focus {
 }
 
 form.input {
-  margin-top: 300px;
   display: flex;
   flex-direction: column;
   padding: 8px 10px;
   gap: 10px;
-  width: 70vw; /* Задаем ширину формы 70% */
+  width: 80vw; /* Задаем ширину формы 70% */
   max-width: 1266px; /* Максимальная ширина формы */
   background: #FFFFFF;
   border-radius: 8px;

@@ -5,11 +5,18 @@ html {
     display: flex;
     justify-content: center;
     font-family: 'Inter', sans-serif;
+    align-items: center;
 }
-.Tagsform .Tags{
-    margin-top: 300px;
+.TagsForm {
     display: flex;
-    flex-direction:row;
+    flex-direction: column;
+    align-items: center; /* Добавлено для выравнивания формы и кнопок по горизонтали */
+    justify-content: center;
+}
+
+.TagsForm .Tags {
+    display: flex;
+    flex-direction: row;
     padding: 8px 10px;
     gap: 10px;
     width: 1066px;
@@ -17,6 +24,12 @@ html {
     border-radius: 8px;
     font-family: 'Inter';
     font-style: normal;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Добавлено для создания небольшого отступа между формой и кнопками */
 }
 #left,#right{
     display: flex;
