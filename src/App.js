@@ -10,7 +10,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import base from './base.png';
 import { Drawer, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { color } from '@mui/system';
 
 const App = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
