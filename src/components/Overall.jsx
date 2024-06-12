@@ -105,7 +105,7 @@ const Overall = () => {
                 return null; // Пропускаем вывод
               }
             })}
-
+          <button type="button" className='Back' style={{width:200,height:35,fontSize:16}} onClick={() => navigate('/Explanation', { state: { task} })}>Show Explanation</button>
           </div>
         </div>
         <div className="top3">

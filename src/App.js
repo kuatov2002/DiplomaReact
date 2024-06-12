@@ -5,6 +5,7 @@ import InputForm from './components/InputForm';
 import Overall from './components/Overall';
 import Home from './components/Home';
 import Base from './components/Base';
+import Explanation from './components/Explanation';
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import base from './base.png';
@@ -43,6 +44,7 @@ const App = () => {
         <Route path='Suggestions' element={<Suggestions />} />
         <Route path='Overall' element={<Overall />} />
         <Route path='Base' element={<Base />} />
+        <Route path='Explanation' element={<Explanation />} />
       </Routes>
       <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
         <div style={{ height: '100%', width: 500, backgroundColor: '#2E683B', display: 'flex', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>

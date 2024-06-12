@@ -20,3 +20,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+**/.cache
+/node_modules/.cache
+node_modules/.cache/default-development/4.pack

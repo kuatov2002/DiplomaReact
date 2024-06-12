@@ -18,6 +18,7 @@ import { useSwitch } from '@mui/base/useSwitch';
 import axios from 'axios';
 
 import Popper from '@mui/material/Popper';
+import LoadingOverlay from './LoadingOverlay';
 const FilterDropdown = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [expandedTopics, setExpandedTopics] = useState(false);
@@ -335,7 +336,7 @@ const TagsForm = () => {
   const [Few, setFew] = useState('');
   const [Join, setJoin] = useState('');
   const [Relate, setRelate] = useState('');
-
+  const [isLoading, setIsLoading] = useState(false);
   const [tags, setTags] = useState([]); // Инициализируем состояние с начальным массивом тегов
   // ... другой код
 
@@ -381,6 +382,7 @@ const TagsForm = () => {
   const handleSubmit = async (e) => {
     console.log('Loading...');
     e.preventDefault();
+    setIsLoading(true);
     const input = {
       Topic: topic,
       Keywords: tags.join(', '), // Преобразуем массив тегов в строку
@@ -404,6 +406,8 @@ const TagsForm = () => {
         navigate('/Suggestions', { state: { responseData, input,task } });
       } catch (error) {
         console.error(error);
+      } finally {
+        setIsLoading(false);
       }
     };
     sendRequest();
@@ -414,6 +418,7 @@ const TagsForm = () => {
   return (
     
     <div className='TagsForm'>
+      <LoadingOverlay isLoading={isLoading} />
       <div class="slider">
         <div class="line"></div>
         <div class="ellipse">

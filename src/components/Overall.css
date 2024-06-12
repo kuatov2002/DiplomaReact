@@ -7,10 +7,6 @@ html {
     font-family: 'Inter', sans-serif;
 }
 
-.overall p {
-    
-}
-
 .overall svg {
     margin-right: 3px;
 }
@@ -44,7 +40,7 @@ html {
 
 }
 
-.overall h2 {}
+
 
 textarea.card {
     display: flex;
