@@ -1,0 +1,31 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.Task{
+    width: 80vw;
+    display: flex;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
+
+.Nocode{
+    width: 30%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+}
+.Nocode > *{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.Code{
+    width: 70%;
+    background-color: green;
+}

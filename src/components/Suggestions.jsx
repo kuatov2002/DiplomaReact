@@ -155,7 +155,7 @@ const ProblemCard = ({ difficulty, title, description, category, tags, similarit
       </TagsContainer>
       <SimilarityAndButton>
         <Similarity>{`${similarity}% similarity`}</Similarity>
-        <Button  onClick={() =>navigate('/Base/'+taskid)}>Show solution &rarr;</Button>
+        <Button  onClick={() =>navigate('/Base/'+taskid, { state: { similarity } })}>Show solution &rarr;</Button>
       </SimilarityAndButton>
     </ProblemCardContainer>
   );

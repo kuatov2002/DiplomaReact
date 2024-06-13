@@ -6,7 +6,9 @@ html {
     justify-content: center;
     font-family: 'Inter', sans-serif;
 }
-
+textarea::-webkit-scrollbar {
+    /* margin-left: 5px; */
+    }
 .overall svg {
     margin-right: 3px;
 }

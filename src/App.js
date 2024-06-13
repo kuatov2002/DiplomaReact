@@ -6,6 +6,7 @@ import Overall from './components/Overall';
 import Home from './components/Home';
 import Base from './components/Base';
 import Explanation from './components/Explanation';
+import Task from './components/Task'
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import base from './base.png';
@@ -25,7 +26,7 @@ const App = () => {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"></link>
       <header style={{width:'80%', position: 'absolute', top: 70, left: '50%',transform:'translateX(-50%)', display: 'flex', justifyContent: 'space-between'}}>
-        <a id='problemBase' style={{ display: 'flex', alignItems: 'center' }} href='Base'>
+        <a id='problemBase' style={{ display: 'flex', alignItems: 'center' }} href='/Base'>
           <img src={base} alt="Base" width={39} />
           <span style={{ fontFamily: 'Inter', fontSize: 20, fontWeight: 400, lineHeight: '16px', textAlign: 'left', marginLeft: 10 }}>Problem Base</span>
         </a>
@@ -44,6 +45,7 @@ const App = () => {
         <Route path='Suggestions' element={<Suggestions />} />
         <Route path='Overall' element={<Overall />} />
         <Route path='Base' element={<Base />} />
+        <Route path='Base/:id' element={<Task />} />
         <Route path='Explanation' element={<Explanation />} />
       </Routes>
       <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
