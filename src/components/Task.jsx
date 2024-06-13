@@ -15,10 +15,10 @@ const Task = () => {
   const percentage = data.state?.similarity || '';
 
   const handleCodeChange = (e) => {
-    if (code.length===0) {
+    if (code.length === 0) {
       setCode(e.target.value);
     }
-    
+
   };
 
   const getLineNumbers = () => {
@@ -107,7 +107,7 @@ const Task = () => {
         </div>
         <p style={{ color: '#7C7C7C', fontSize: 14 }}>{description}</p>
         <p>
-          Main Topic: 
+          Main Topic:
           <a href={`https://en.wikipedia.org/wiki/${topic}`} style={{ color: '#4E689A', textDecoration: 'underline' }}>
             {topic}
           </a>
