@@ -15,7 +15,7 @@ const Task = () => {
   const percentage = data.state?.similarity || '';
 
   const handleCodeChange = (e) => {
-    if (code.length==0) {
+    if (code.length===0) {
       setCode(e.target.value);
     }
     
@@ -90,25 +90,8 @@ const Task = () => {
     difficulty,
     topic,
     keywords,
-    dataNotInteract,
-    countingRelated,
-    fewKManyV,
-    joinData,
-    conditionProblem,
-    output,
   } = problemData;
 
-  const tags = {
-    Topic: topic,
-    Difficulty: difficulty,
-    Keywords: keywords,
-    DataNotInteract: dataNotInteract,
-    CountingRelated: countingRelated,
-    FewKManyV: fewKManyV,
-    JoinData: joinData,
-    ConditionProblem: conditionProblem,
-    Output: output,
-  };
 
   return (
     <div className="Task">
