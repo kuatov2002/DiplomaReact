@@ -10,7 +10,7 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-
+import CircularProgress from '@mui/material/CircularProgress';
 import clsx from 'clsx';
 import { styled } from '@mui/system';
 import { useSwitch } from '@mui/base/useSwitch';
@@ -275,6 +275,7 @@ const inputList = inputWord.split(',');
 const outputWord = "index of the integer number, 1 array with sum of elements from 2 arrays, length of the longest substring, median of the common array, boolean(s can personify break up into words from the wordDict dictionary?), string in zigzag order, sequence of binary numbers agree to the condition, draw defend the minimum window in string along that curb all characters from second string, boolean(is x palindrome?), string of text in pirate language, the maximum amount of water a container can stock, string(roman), length of the longest common subsequence, longest growth subsequence, sum pf the three integers, array of integers, with one at the end, 2 elements from array that equal to objective, list after erase a node, true if parentheses live balanced, false otherwise, sort out linked list arrest all nodes from two lists, list of all correct parentheses sequences of length n, combining list, length of the new array without elements with value val, list after alternate groups of nodes, integer, index of the element, array of arrays, unique combinations, smallest positive integer that make up not in the array, boolean(is string match pattern), minimum number of jumps, list of all possible permutations of nums, boolean(if target in matrix), boolean(if the word beryllium find in the matrix), boolean, two-dimensional array of size n go n, satiate with numbers from 1 to n^2 in the spiral order, array of non-intersecting intervals, unique paths, path from top left to nates right, the k-th element of array, matrix, array of combinations, maximal area of the rectangle, which can exist establish in the histogram, maximal area of the rectangle consisting of 1, connexion list after divide, boolean(if s3 can follow find by rearrange the characters in s1 and s2), one sorting array, list of all possible valid IP addresses, root node of the binary tree, number of structurally unique BST, list of lists of node values match to each level of the tree, boolean(if the trees Be equal), list of integers map the right visible side of the binary tree, maximum depth of the tree, proportionality or not, minimum depth of the tree, boolean(whether there equal a path with the ease up sum), tree with correctly inhabit next pointers, two-dimensional array correspond Pascal's triangle up to numRows, subsets of nums without repetitions, index of the first occurrence, length of the new array without duplicates, exist Palindrome?(boolean), the closest pair of points and the convex hull of the set of points, head of a contact list, sort in go up order, k clusters, each of which hold points, indices of substring, maximum sum of a continuous subsequence of array elements, node exemplify the first intersection of two linked lists, the missing number, number of rooms, maximum subsequence sum of elements, shortest path from the initial word to the final one, array of strings, number of Islands in matrix, boolean(if the tree exist a binary search tree), three numbers in sorted order, least number of perfect square, number of palindromic substrings, subset of vertices hold back the minimum number of vertices, assort reviews into positive, negative, or neutral infrastructure on a machine-learning model, array where the i-th position follow the number of ones in the binary representation of number i, aggregative log information incur as a result of data march, number of ways to decode string, longest palindrome substring, number of non-empty subarrays, array of integers, boolean(if the game live wager correctly), boolean(if s2 can exist get from s1), boolean(if the tree constitute symmetric), head of the contact list after bump off duplicates, sorted array of elements, prediction for test dataset, minimum number of subsets want to masking all elements., sorted array of integers, list of words and number of their mentions in the text, change colligate list, where m-th node turn n-th node, and (m+1)-th node get (n-1)-th node, and so on, list of node values in in-order traversal order, shortest paths, number of containers necessitate to throng all items., list after barter nodes, breadth first traversal (from first vertex), list of lines stop matches with the pattern in each file";
 const outputList = outputWord.split(',');
 
+
 const CrossIcon = ({ onClick = (event) => event.currentTarget.parentNode.remove() }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -301,6 +302,7 @@ const TagsForm = () => {
     useEffect(() => {
       const sendRequest = async () => {
         try {
+          setIsLoading(true); // Set isLoading to true before sending the request
           const response = await axios.post('https://algoanalysesdeploym-production-2364.up.railway.app/classify', {
             input: task
           });
@@ -318,10 +320,12 @@ const TagsForm = () => {
           setRelate(responseData.binary[4]);
         } catch (error) {
           console.error(error);
+        } finally {
+          setIsLoading(false); // Set isLoading to false after the data is fetched
         }
       };
       sendRequest();
-    }, [task]); // Add task to the dependency array
+    }, [task]);
 
 
 
@@ -360,9 +364,9 @@ const TagsForm = () => {
     setRelate(value ? '1' : '0');
   };
 
-  const handleAddTag = (some) => {
+  const handleAddTag = (newTag) => {
     // Добавляем новый тег в массив
-    setTags([...tags, some]);
+    setTags([...tags, newTag]);
   };
 
   const handleTagChange = (index, newValue) => {
@@ -495,17 +499,18 @@ const TagsForm = () => {
           <p>Tags</p>
           <p id="addon">Add one or more tags for better results.</p>
           <div id="tags">
-            <Fab aria-label="add" size="small" style={{ margin: '0 6px 0 0' }}>
-              <AddIcon style={{ color: 'white' }} onClick={() => handleAddTag('some')} />
-            </Fab>
-            {tags.map((tag, index) => (
-              <Fab key={index} variant="extended" size="medium" color="primary">
-                <p onChange={(e) => handleTagChange(index, e.target.value)}>{tag}</p>
-                <CrossIcon onClick={() => handleRemoveTag(index)} />
-              </Fab>
-            ))}
-
-          </div>
+  <Fab aria-label="add" size="small" style={{ margin: '0 6px 0 0' }}>
+    <AddIcon style={{ color: 'white' }} onClick={() => handleAddTag('some')} />
+  </Fab>
+  {tags.map((tag, index) => (
+    tag.length > 0 && (
+      <Fab key={index} variant="extended" size="medium" color="primary">
+        <p onChange={(e) => handleTagChange(index, e.target.value)}>{tag}</p>
+        <CrossIcon onClick={() => handleRemoveTag(index)} />
+      </Fab>
+    )
+  ))}
+</div>
         </div>
         <div id="right">
           <h1>MapReduce Classification</h1>

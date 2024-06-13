@@ -24,3 +24,4 @@ yarn-error.log*
 **/.cache
 /node_modules/.cache
 node_modules/.cache/default-development/4.pack
+*.pack

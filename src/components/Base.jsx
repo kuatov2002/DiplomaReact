@@ -9,7 +9,7 @@ const Base = () => {
     useEffect(() => {
         const fetchProblems = async () => {
             try {
-                const response = await axios.post('https://algoanalysesdeploym-production.up.railway.app/find_All_Paginated', {
+                const response = await axios.post('https://algoanalysesdeploym-production-2364.up.railway.app/find_All_Paginated', {
                     input: { page: currentPage, size: 5 },
                 });
                 const responseData = response.data;
