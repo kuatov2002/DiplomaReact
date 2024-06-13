@@ -36,6 +36,7 @@ html {
     flex-direction: column;
     height: 300px;
     margin: 0 40px;
+    width: 50%;
 }
 #category,#puts,#input,#output,#somet,.alltags,#difficulty,.feature{
     display: flex;
@@ -82,6 +83,7 @@ p {
 
 #tags {
     display: flex;
+    flex-wrap: wrap; /* Это свойство позволит тегам переноситься на новую строку */
 }
 #tags button{
     background: #58AE6B;

@@ -295,36 +295,36 @@ const CrossIcon = ({ onClick = (event) => event.currentTarget.parentNode.remove(
 
 const TagsForm = () => {
   const formRef = useRef(null);
-    const location = useLocation();
-    const task = location.state?.input || '';
-    const navigate = useNavigate();
-    useEffect(() => {
-      const sendRequest = async () => {
-        try {
-          setIsLoading(true); // Set isLoading to true before sending the request
-          const response = await axios.post('https://algoanalysesdeploym-production-2364.up.railway.app/classify', {
-            input: task
-          });
-          const responseData = response.data;
-          console.log(responseData);
-          setTopic(responseData.topic);
-          setDifficulty(responseData.difficulty);
-          setInput(responseData.input);
-          setOutput(responseData.output);
-          setTags(responseData.keywords);
-          setDataInter(responseData.binary[0]);
-          setCount(responseData.binary[1]);
-          setFew(responseData.binary[2]);
-          setJoin(responseData.binary[3]);
-          setRelate(responseData.binary[4]);
-        } catch (error) {
-          console.error(error);
-        } finally {
-          setIsLoading(false); // Set isLoading to false after the data is fetched
-        }
-      };
-      sendRequest();
-    }, [task]);
+  const location = useLocation();
+  const task = location.state?.input || '';
+  const navigate = useNavigate();
+  useEffect(() => {
+    const sendRequest = async () => {
+      try {
+        setIsLoading(true); // Set isLoading to true before sending the request
+        const response = await axios.post('https://algoanalysesdeploym-production-2364.up.railway.app/classify', {
+          input: task
+        });
+        const responseData = response.data;
+        console.log(responseData);
+        setTopic(responseData.topic);
+        setDifficulty(responseData.difficulty);
+        setInput(responseData.input);
+        setOutput(responseData.output);
+        setTags(responseData.keywords);
+        setDataInter(responseData.binary[0]);
+        setCount(responseData.binary[1]);
+        setFew(responseData.binary[2]);
+        setJoin(responseData.binary[3]);
+        setRelate(responseData.binary[4]);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false); // Set isLoading to false after the data is fetched
+      }
+    };
+    sendRequest();
+  }, [task]);
 
 
 
@@ -406,7 +406,7 @@ const TagsForm = () => {
         const responseData = response.data;
         console.log(response.data);
         console.log(input);
-        navigate('/Suggestions', { state: { responseData, input,task } });
+        navigate('/Suggestions', { state: { responseData, input, task } });
       } catch (error) {
         console.error(error);
       } finally {
@@ -414,21 +414,21 @@ const TagsForm = () => {
       }
     };
     sendRequest();
-    
+
   };
 
 
   return (
-    
+
     <div className='TagsForm'>
       <LoadingOverlay isLoading={isLoading} />
       <div class="slider">
         <div class="line"></div>
         <div class="ellipse">
-        
+
         </div>
         <div class="ellipse">
-        <div class="inner-circle"></div>
+          <div class="inner-circle"></div>
         </div>
         <div class="ellipse"></div>
         <div class="ellipse"></div>
@@ -464,7 +464,7 @@ const TagsForm = () => {
               value={inputName}
               onChange={(event, newValue) => setInput(newValue || '')}
               isEmpty={!inputName}
-              name='input' 
+              name='input'
             />
           </div>
           <div id="output">
@@ -498,44 +498,49 @@ const TagsForm = () => {
           <p>Tags</p>
           <p id="addon">Add one or more tags for better results.</p>
           <div id="tags">
-  <Fab aria-label="add" size="small" style={{ margin: '0 6px 0 0' }}>
-    <AddIcon style={{ color: 'white' }} onClick={() => handleAddTag('some')} />
-  </Fab>
-  {tags.map((tag, index) => (
-    tag.length > 0 && (
-      <Fab key={index} variant="extended" size="medium" color="primary">
-        <p onChange={(e) => handleTagChange(index, e.target.value)}>{tag}</p>
-        <CrossIcon onClick={() => handleRemoveTag(index)} />
-      </Fab>
-    )
-  ))}
-</div>
+            <Fab aria-label="add" size="small" style={{ margin: '0 6px 0 0' }}>
+              <AddIcon style={{ color: 'white' }} onClick={() => {
+                const newTag = window.prompt('Enter new tag:');
+                if (newTag) {
+                  handleAddTag(newTag);
+                }
+              }} />
+            </Fab>
+            {tags.map((tag, index) => (
+              tag.length > 0 && (
+                <Fab key={index} variant="extended" size="medium" color="primary">
+                  <p onChange={(e) => handleTagChange(index, e.target.value)}>{tag}</p>
+                  <CrossIcon onClick={() => handleRemoveTag(index)} />
+                </Fab>
+              )
+            ))}
+          </div>
         </div>
         <div id="right">
           <h1>MapReduce Classification</h1>
           <div className="feature">
-            <p>Data not interact</p> <BasicSwitch boolInt={DataInter} onChange={handleDataInterChange}/>
+            <p>Data not interact</p> <BasicSwitch boolInt={DataInter} onChange={handleDataInterChange} />
           </div>
           <div className="feature">
-            <p>Counting Related</p> <BasicSwitch boolInt={Count} onChange={handleCountChange}/>
+            <p>Counting Related</p> <BasicSwitch boolInt={Count} onChange={handleCountChange} />
           </div>
           <div className="feature">
-            <p>Few keys many values</p> <BasicSwitch boolInt={Few} onChange={handleFewChange}/>
+            <p>Few keys many values</p> <BasicSwitch boolInt={Few} onChange={handleFewChange} />
           </div>
           <div className="feature">
-            <p>Joining Data</p> <BasicSwitch boolInt={Join} onChange={handleJoinChange}/>
+            <p>Joining Data</p> <BasicSwitch boolInt={Join} onChange={handleJoinChange} />
           </div>
           <div className="feature">
-            <p>Related to the condition</p> <BasicSwitch boolInt={Relate} onChange={handleRelateChange}/>
+            <p>Related to the condition</p> <BasicSwitch boolInt={Relate} onChange={handleRelateChange} />
           </div>
         </div>
-        
+
       </form>
       <div className="buttons">
-      <button type="button" className='Back' onClick={() =>navigate('/Input')}>{'<'}- Back</button>
-      <button type="button" onClick={() => formRef.current.requestSubmit()} className='Go'>Go -{'>'}</button>
+        <button type="button" className='Back' onClick={() => navigate('/Input')}>{'<'}- Back</button>
+        <button type="button" onClick={() => formRef.current.requestSubmit()} className='Go'>Go -{'>'}</button>
       </div>
-      
+
     </div>
   );
 };
