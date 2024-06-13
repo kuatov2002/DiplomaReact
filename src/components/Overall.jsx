@@ -37,7 +37,6 @@ const Overall = () => {
   const task = data.state?.task || '';
   
   const [isLoading, setIsLoading] = useState(false);
-  var Guru;
   console.log(tasks);
   console.log(tags);
   console.log(task);
